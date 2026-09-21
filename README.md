@@ -73,6 +73,8 @@ Ya está creado con un `JWT_SECRET` generado. Si necesitas cambiar el puerto, ed
 4. Desactiva el modo avión. En unos segundos la app sincroniza sola (o desliza hacia abajo para forzarlo) y la etiqueta de pendiente desaparece.
 5. Para probar el lado administrador: inicia sesión con `admin@clinica.com`, confirma o cancela citas — funciona igual offline/online.
 
-## 4. Generar el APK (pendiente)
+## 4. APK
 
-Se deja para el final, una vez todo funcione bien en Expo Go, usando EAS Build (no depende de tener Mac ni de instalar Android Studio).
+El entregable ya está generado: [`agenda-medica.apk`](agenda-medica.apk) (en la raíz del proyecto), compilado en la nube con EAS Build (no requiere Android Studio ni Mac).
+
+Para instalarlo en un celular Android: pasa el archivo al celular (por cable, Drive, WhatsApp, etc.), ábrelo y permite "instalar apps de orígenes desconocidos" cuando lo pida. Al abrir la app, si el celular no está en la misma red que el backend, edita `API_BASE_URL` en `mobile/src/config.js` con la IP donde esté corriendo el backend y vuelve a generar el APK (`cd mobile && npx eas-cli build --platform android --profile preview`).
